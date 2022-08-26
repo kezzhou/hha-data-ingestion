@@ -10,3 +10,4 @@ geopandas # for geospatial analysis
 google-cloud-bigquery # for bigquery 
 PyPDF2 # for pdf processing
 xlrd # for excel processing
+matplotlib
