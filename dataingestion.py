@@ -1,8 +1,9 @@
 ##### importing necessary packages #####
 
-import pandas as pd ##import pandas to read xlsx source data tabs
-import requests as rq
-import json
+import pandas as pd ## import pandas to read xlsx source data tabs
+import requests as rq ## used to pull api datasets from the web
+import json ## used to visualize public api datasets
+from google.cloud import bigquery
 
 
 
@@ -33,3 +34,22 @@ apiDataset ## we can then simply run the function to see the results
 
 ##### section 3 - bigquery datasets #####
 
+client = bigquery.Client.from_service_account_json('/Users/kevinzhou/Documents/GitHub/hha-data-ingestion/keys/hha-data-ingestion-360803-a453da9d036b.json') ## here we create a client to essentially log into our gcp and access the respective project the service account governs
+
+query_job = client.query("SELECT * FROM `hha-data-ingestion-360803.us_census_data.population_by_zip_2000` LIMIT 100") ## here we use client query which wraps an sql query that selects all columns from the us census public dataset I've chosen to use. The selection is limited to the first 100 rows
+
+results = query_job.result() ## results is defined as a function that displays the results of our above query
+
+df = pd.DataFrame(results.to_dataframe()) ## the above results are then framed within a dataframe with this function
+
+
+## here we can repeat these steps a second time with a second public bigquery dataset that was added to the gcp project
+
+query_job = client.query("SELECT * FROM `hha-data-ingestion-360803.historical_air_quality.air_quality_annual_summary` LIMIT 100") ## this time we use a dataset about air quality
+
+results = query_job.result()
+
+df = pd.DataFrame(results.to_dataframe())
+
+## when attempting to run lines 43 or 52, error quotes needing to install db_dtypes even though when install is run in terminal, it reports already fulfilled.
+## this may be a compability issue
