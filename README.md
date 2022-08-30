@@ -15,3 +15,6 @@
 ## keys folder holds our GCP service account's api key and is thus included in gitignore
 
 ## requirements txt includes all the necessary packages to be installed via terminal based on the first week. only a handful are actually imported in python shell.
+
+
+## THERE MAY BE A COMPATIBILITY ISSUE WITH DB-DTYPES. In order to resolve this when running section 3, run command 'pip install db-dtypes' in terminal prior.

@@ -40,7 +40,7 @@ query_job = client.query("SELECT * FROM `hha-data-ingestion-360803.us_census_dat
 
 results = query_job.result() ## results is defined as a function that displays the results of our above query
 
-df = pd.DataFrame(results.to_dataframe()) ## the above results are then framed within a dataframe with this function
+bigquery1 = pd.DataFrame(results.to_dataframe()) ## the above results are then framed within a dataframe with this function
 
 
 ## here we can repeat these steps a second time with a second public bigquery dataset that was added to the gcp project
@@ -49,7 +49,7 @@ query_job = client.query("SELECT * FROM `hha-data-ingestion-360803.historical_ai
 
 results = query_job.result()
 
-df = pd.DataFrame(results.to_dataframe())
+bigquery2 = pd.DataFrame(results.to_dataframe())
 
 ## when attempting to run lines 43 or 52, error quotes needing to install db_dtypes even though when install is run in terminal, it reports already fulfilled.
 ## this may be a compability issue
