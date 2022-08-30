@@ -50,6 +50,3 @@ query_job = client.query("SELECT * FROM `hha-data-ingestion-360803.historical_ai
 results = query_job.result()
 
 bigquery2 = pd.DataFrame(results.to_dataframe())
-
-## when attempting to run lines 43 or 52, error quotes needing to install db_dtypes even though when install is run in terminal, it reports already fulfilled.
-## this may be a compability issue
