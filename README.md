@@ -1,6 +1,6 @@
 # hha-data-ingestion
 
-## this repo contains a couple key components: data folder, keys folder, requirements txt, a py file, and of course this read me mark down.
+## this repo contains a couple key components: data folder, keys folder, requirements txt, a py file, and this read me md.
 
 
 
@@ -13,6 +13,21 @@
 
 
 ## keys folder holds our GCP service account's api key and is thus included in gitignore
+
+
+## .JSON API KEY FORMAT
+## {  "type": "service_account",
+## "project_id": "hha-data-ingestion-360803",
+##  "private_key_id":
+##  "private_key":
+##  "client_email":
+##  "client_id":
+##  "auth_uri": 
+##  "token_uri": 
+##  "auth_provider_x509_cert_url":
+##  "client_x509_cert_url":
+##  }
+
 
 ## requirements txt includes all the necessary packages to be installed via terminal based on the first week. only a handful are actually imported in python shell.
 
