@@ -1,6 +1,6 @@
-# HHA 507 // Week 1 // Assignment 1
-
 # hha-data-ingestion
+
+## HHA 507 // Week 1 // Assignment 1
 
 ## this repo contains a couple key components: data folder, keys folder, requirements txt, a py file, and this read me md.
 
